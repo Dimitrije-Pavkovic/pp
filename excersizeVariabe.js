@@ -142,6 +142,9 @@ you think should go in the following table:
 
 console.log(true&&true);
 console.log(true||true);
+console.log(false||true);
+console.log(false||false);
+
 
 /*14. If the variable age stores the information about user’s age, how we can check whether it
 contains a correct value? Write expressions for checking:
