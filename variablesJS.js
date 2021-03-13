@@ -54,7 +54,7 @@ console.log(3<2<1); //daje true (operatior associativity)
 var s = '1s'; s++;
 console.log(s); // rezultat je NaN
 
-var f = 10% "0";
+var f = 10% "0";  //NaN
 console.log(f);
 
 var k = undefined ==null; //true
@@ -71,5 +71,7 @@ console.log(l);    // 3000
 
 var c = 22;
 
-if (c>5) {console.log('cao')}
+if (c>5) {
+    console.log('cao')
+}
 

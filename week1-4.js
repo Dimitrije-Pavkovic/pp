@@ -15,5 +15,7 @@ else console.log ('odd')
 
 
 var g=15;
-if (g%3===0 && g%5===0){
- console.log (g);}
+if (g%3===0 && g%5===0)
+{
+ console.log (g);
+}
