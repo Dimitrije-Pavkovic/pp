@@ -32,5 +32,3 @@ Display the 3rd element of the array,
 Display the 2nd element of the 3rd element.
 
 */
-
-
