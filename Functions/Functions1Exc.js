@@ -88,6 +88,26 @@ console.log(result);
 
 */
 
+function dotsOfStars(a,b,c) {
+    var sum1 = '';
+    for (var i = 0; i < a; i++) {
+        sum1 += '*'; 
+    }
+    var sum2 = '';
+    for (var j = 0; j < b; j++) {
+        sum2 += '*'; 
+    }
+    var sum3 = '';
+    for (var i = 0; i < c; i++) {
+        sum3 += '*'; 
+    }
+    return sum1 + '\n' + sum2 + '\n' + sum3;
+
+}
+
+var result = dotsOfStars(5,3,7);
+console.log(result);
+
 
 //7.Write a program that calculates a number of digits of a given number. 
 
@@ -104,7 +124,7 @@ function sumDigits(n) {
 var result = sumDigits(849);
 console.log(result);
 
-//variojanta brojanja
+//varijanta brojanja
 
 function nrOfDigits (a){
     var b = a +'';
