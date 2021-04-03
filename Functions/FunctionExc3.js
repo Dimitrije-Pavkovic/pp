@@ -21,7 +21,7 @@ console.log(isString('3'));
 false -> false
 */
 function isBlank(a) {
-    if(a === " ") {
+    if(a === "") {
         return true;
     }
     else {
@@ -30,7 +30,7 @@ function isBlank(a) {
 }
 
 console.log(isBlank("My random string"));
-console.log(isBlank(" "));
+console.log(isBlank(""));
 console.log(isBlank(12));
 console.log(isBlank(false));
 
@@ -82,24 +82,35 @@ result should be the position of character. If there are no occurrences of the c
 function should return -1. 
 */
 function charFirstOccurrence(word, char) {
-
-    if (typeof word !== "string") {
-        return false;
-    }
-    var place = 0;
     for (var i = 0; i < word.length; i++) {
         if (word[i] === char) {
-            place = i;
-            return place;
-            break;
-
+            
+            return i+1;
         }
-
-    } return -1;
-
+    } 
+ return -1;
 }
 
 console.log(charFirstOccurrence("hello", "l"));
+
+
+//5.M
+
+
+function firstOccurrence(string, a) {
+
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] === a) {
+            return i + 1;
+        }
+    }
+    return -1;
+}
+
+var result = firstOccurrence("Character", "C");
+console.log(result);
+
+
 /* 
 6. Write a function to find the position of the last occurrence of a character in a string. The
 result should be in human numeration form. If there are no occurrences of the character,
@@ -110,11 +121,11 @@ function charLastOccurrence(word, char) {
     if (typeof word !== "string") {
         return false;
     }
-    var place = 0;
-    for (var i = word.length - 1; i >= 0; i--) {
+    var letterPosition = 0;  //variable for letter postion
+    for (var i = word.length - 1; i >= 0; i--) {  //krenemo brojac od kraja
         if (word[i] === char) {
-            place = i + 1;
-            return place;
+               letterPosition = i + 1;
+            return letterPosition;
 
         }
 
@@ -122,100 +133,165 @@ function charLastOccurrence(word, char) {
 
 }
 
-console.log(charLastOccurrence("hello", "l"));
+console.log(charLastOccurrence("Building", "m"));
+console.log(charLastOccurrence("Building", "n"));
+
+//6.m
+function lastOccurrence(string, a) {
+    for (var i = string.length - 1; i > 0; i--) {
+        if (string[i] === a) {
+            return i + 1;
+        }
+    }
+    return -1;
+}
+
+var result = lastOccurrence("Character", "c");
+console.log(result);
 
 /* 
-7. Write a function to convert string into an array. Space in a string should be represented as
+7. Write a function to convert string into an array. 
+Space in a string should be represented as
 "null" in new array.
 ""My random string" -> ["M", "y", null, "r", "a"]
 "Random" -> ["R", "a", "n", "d", "o", "m"]
 */
 
-function stringToArray(str) {
+function stringToArray(string) {
     var newArr = [];
-    for (var i = 0; i < str.length; i++) {
-        if (str[i] === " ") {
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] === " ") {
             newArr[i] = null;
         } else {
-            newArr[i] = str[i];
+            newArr[i] = string[i];
         }
     }
     return newArr;
 }
 
 var s= "My random string";
-console.log(stringToArray(s));
+newArr = [stringToArray(s)];
+console.log(newArr);
+
+
 
 /* 
-8. Write a function that accepts a number as a parameter and checks if the number is prime or
-not.
-Note: A prime number (or a prime) is a natural number greater than 1 that has no positive
+8. Write a function that accepts a number as a parameter and checks
+ if the number is prime or not.
+Note: A prime number (or a prime) is a natural number greater than 1
+ that has no positive
 divisors other than 1 and itself.
 */
 function isPrimeNumber(number) {
     if (number <= 0) {
         return false;
     }
-
     for (var i = 2; i < number; i++) {
         if (number % i === 0) {
             return false;
         }
     }
-
     return true;
 }
-console.log(isPrimeNumber(2));
+
+console.log(isPrimeNumber(61));
+
+
+//komplikovanije
+
+function isPrimeNumber(n) {
+    
+
+        if (n===1)
+        {
+          return false;
+        }
+        else if(n === 2)
+        {
+          return true;
+        }else
+        {
+          for(var x = 2; x < n; x++)
+          {
+            if(n % x === 0)
+            {
+              return false;
+            }
+          }
+          return true;  
+        }
+      }
+
+   console.log(isPrimeNumber(4));
+
+
+   //jednostavno
+   function isPrime(num) {
+    for(var i = 2; i < num; i++)
+      if(num % i === 0) return false;
+    return num > 1;
+  }
+
 /* 
-9. Write a function that replaces spaces in a string with provided separator. If separator is not
-provided, use "-" (dash) as the default separator.
+9. Write a function that replaces spaces in a string with provided separator. 
+If separator is notprovided, use "-" (dash)
+ as the default separator.
 
 "My random string", "_" -> "My_random_string"
 "My random string", "+" -> "My+random+string"
 "My random string"  -> "My-random-string"
 */
-function wordSeparator(s, separator) {
+function wordSeparator(string, separator) {
     var newSent = "";
-    if (typeof separator === "undefined") {
+    if (typeof separator === 'undefined') {
         separator = "-";
     }
-    for (var i = 0; i < s.length; i++) {
-        if (s[i] === " ") {
+    for (var i = 0; i < string.length; i++) {
+        if (string[i] === " ") {
             newSent += separator;
         } else {
-            newSent += s[i];
+            newSent += string[i];
         }
     }
     return newSent;
 }
+
+console.log(wordSeparator("My random string", "_"));
 console.log(wordSeparator("My random string", "+"));
+console.log(wordSeparator("My random string"));
 /* 
 10. Write a function to get the first n characters and add "..." at the end of newly created string.
 */
-function firstFewCharact(n, word) {
+function firstCarAdd(word, l) {
     var newWord = "";
-    var dots = "...";
-    for (var i = 0; i < n; i++) {
-        newWord += word
-    } newWord += dots;
+    for (i = 0; i < l; i++) {
+        newWord += word[i];
+    } 
+    newWord += "...";
     return newWord;
 }
-console.log(firstFewCharact(5, "Vladan Cupric  "));
+console.log(firstCarAdd("Dobar dan ", 2));
 
 /* 
-11. Write a function that converts an array of strings into an array of numbers. Filter out all
-non-numeric values.
+11. Write a function that converts an array of strings into an array of numbers.
+Filter out all non-numeric values.
 ["1", "21", undefined, "42", "1e+3", Infinity] -> [1, 21, 42, 1000]
 */
-function converts(arr) {
+function convertsStringToNumbers(arr) {
     var newArr = [];
+ 
     for (var i = 0; i < arr.length; i++) {
-        newArr[i] = Number(arr[i]);
-    }
+    
+var convert = parseFloat(arr[i]);
+
+if (isFinite(convert)) {  //proverava da li je sve brojiev i da nisu undefined, NaN, uklanja nepotrebne
+newArr[newArr.length] = convert;
+}
+}
     return newArr;
 }
-var arR = ["1", "21", undefined, "42", "1e+3", Infinity];
-console.log(converts(arR));
+var array = ["1", "21", undefined, "42", "1e+3", Infinity];
+console.log(convertsStringToNumbers(array));
 
 /* 
 12. Write a function to calculate how many years there are left until retirement based on the
