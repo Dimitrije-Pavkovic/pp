@@ -5,30 +5,27 @@ beginning of a string).
 "My random string", "JS", 10,  "My random JS string"
 */
 
-function insertString(word, sent, num = 0) {
+function StringWithinString (word, string, position){
     var newString = "";
     word = " " + word + " ";
-
-    for (var i = 0; i < sent.length; i++) {
-        if (num === i) {
-            newString += word;
-            sent[i + 1] = sent[i];
+    
+    for (var i = 0; i < string.length; i ++) {
+        if (position === i){
+            newString += word;  
+            string [i + 1] = string[i];
         }
-        if (i > num) {
-            sent[i + 1] = sent[i];
-            newString += sent[i];
+        if ( i < position){
+            string[i + 1] = string[i];
+            newString += string[i];
         } else {
-            newString += sent[i];
+            newString += string[i];
         }
     }
     return newString;
-}
-
-var newWord = "JS";
-var newSent = "My random string";
-var number = 10;
-
-console.log(insertString(newWord, newSent, number));
+    }
+    
+    
+    console.log(StringWithinString( "JS","My random string",0));
 
 /*
 2. Write a program to join all elements of the array into a string skipping elements that are
