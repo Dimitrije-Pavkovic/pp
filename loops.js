@@ -42,17 +42,3 @@ for (var i = 0; i < 5; i++){
 
 console.log (res);
 
-
-
-var arr = [1, -3, 5, -23]
-var res = '';
-
-for (var i = 0; i < arr.length; i++){
-    if (arr[i] < 0) {
-        res += arr[i]
-    }
-}
-
-console.log (res);
-
-

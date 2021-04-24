@@ -83,3 +83,5 @@ var func  = outer();
 func();
 
 outer()();
+
+
