@@ -1,0 +1,21 @@
+div{
+    
+    background-color:#2d3e4f;
+    align-items: center;
+    height: 300px;
+    position: relative;
+    
+}
+.dugme { margin:0 auto;
+    margin-top: 15px;
+    margin-left: 43%;
+    background-color: #c1392b;
+    border: none;
+    color: white;
+  padding: 5px 15px;
+  border-radius: 3px;
+}
+
+.lightcolor {
+    background-color: rgb(204, 202, 202);
+}
