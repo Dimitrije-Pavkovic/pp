@@ -85,7 +85,22 @@ Add a method that prints out all the ingredients necessary for the meal preparat
 Add a method that checks if a meal can be prepared for 15 minutes. 
 Add a method that changes the type of cuisine to the given value. 
 Add a method that delete a given ingredient from the list of ingredients.  
-
 */
+
+function Project (name, typeOfCuisine, complexity, listOfIngredient) {
+    this.name = name;
+    this.typeOfCuisine = typeOfCuisine;
+    this.complexity = complexity;
+    this.listOfIngredient = listOfIngredient;
+
+    this.ingredient = function () {
+        console.log(this.listOfIngredient);
+    };
+}
+
+var kulinarskiRecept = new Project("Sarma", "Kuvano jelo", 5, "meso, kupus ");
+
+kulinarskiRecept.ingredient();
+console.log(kulinarskiRecept);
 
 

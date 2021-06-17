@@ -1,0 +1,17 @@
+.div1{
+    background-color: thistle;
+    height: 500px;
+    width: 50%;
+    
+    border-radius: 1%;
+    border-color: teal;
+    
+}
+
+.div2{
+    background-color: tomato;
+    height: 500px;
+    width: 50%;
+ 
+    border-color: teal;
+}
