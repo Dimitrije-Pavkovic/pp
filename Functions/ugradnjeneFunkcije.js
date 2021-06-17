@@ -117,3 +117,7 @@ var mappedArray = someArr.map(function(number){
 console.log(someArr);
 console.log(mappedArray);
 
+//var currentTime = new Date();
+
+var currentTime = new Date();
+console.log(currentTime);
